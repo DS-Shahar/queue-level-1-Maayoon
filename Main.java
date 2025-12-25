@@ -5,6 +5,24 @@ public class Main
     static Scanner reader = new Scanner(System.in);
 
 
+
+
+	public static Queue<Integer> buildQueue (int [] arr) 
+	{	
+	    Queue <Integer> q = new Queue<>();     
+      
+	    for (int i=0; i<arr.length; i++)
+	    {
+            q.insert(arr[i]);
+	    }
+	    return q;
+	}
+	
+	
+	
+	
+
+
 	public static Queue<Integer> copy (Queue <Integer> q) 
 	{
         Queue <Integer> newQ1 = new Queue<>();     
@@ -52,7 +70,6 @@ public class Main
 	public static int ex3 (Queue <Integer> q, int num)
 	{
 	    Queue <Integer> q2 = copy(q);
-
 	    int count=0;
 	    
 	    while (!q2.isEmpty())
@@ -136,17 +153,11 @@ public class Main
 	
 	public static void main(String [] args)
 	{
-        Queue <Integer> q1 = new Queue<>();
-        q1.insert(3);
-        q1.insert(2);
-        q1.insert(2);
-        q1.insert(7);
+	    int [] a = {3,2,2,7};
+	    int [] b = {18,21,81,3};
+        Queue <Integer> q1 = buildQueue(a);
+        Queue <Integer> q2 = buildQueue(b);
 
-        Queue <Integer> q2 = new Queue<>();
-        q2.insert(18);
-        q2.insert(9);
-        q2.insert(81);
-        q2.insert(21);
         
 	    System.out.println(q1);	   
 	    System.out.println(ex2(q1));
